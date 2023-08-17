@@ -1,0 +1,23 @@
+<table class="table pre-scrollable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">rating</th>
+            <th scope="col">tag / relevance</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <th scope="row">{{ item.num }}</th>
+            <td>{{ item.title }}</td>
+            <td>{{ item.rating }}</td>
+            <td>
+                {% for t in item.tags_relevance %}
+                <button type="button" class="btn btn-outline-info">{{ t.tag }}:{{ t.relevance }}</button> {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
